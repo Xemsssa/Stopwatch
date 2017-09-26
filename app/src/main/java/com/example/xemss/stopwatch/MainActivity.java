@@ -26,8 +26,8 @@ public class MainActivity extends AppCompatActivity{
 //        }
 
         if (savedInstanceState != null) {
-            int seconds = savedInstanceState.getInt("seconds");
-            boolean running = savedInstanceState.getBoolean("running");
+            seconds = savedInstanceState.getInt("seconds");
+            running = savedInstanceState.getBoolean("running");
             wasRunning = savedInstanceState.getBoolean("wasRunning");
         }
         runTimer();
