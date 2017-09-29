@@ -83,21 +83,39 @@ public class MainActivity extends AppCompatActivity{
         outState.putBoolean("wasRunning", wasRunning);
     }
 
+//    @Override
+//    protected void onStart() {
+//        super.onStart();
+//        // TODO: 27.09.2017 check status before show to user
+//        if (wasRunning) {
+//         running = wasRunning;
+//        }
+//    }
+//
+//    @Override
+//    protected void onStop() {
+//        super.onStop();
+//        // TODO: 27.09.2017 save status before stop
+//        wasRunning = running;
+//        running = false;
+//    }
+
     @Override
-    protected void onStart() {
-        super.onStart();
-        // TODO: 27.09.2017 check status before show to user
-        if (wasRunning) {
-         running = wasRunning;
-        }
+    protected void onPause() {
+        super.onPause();
+        // TODO: 27.09.2017 when pause occur
+        wasRunning = running;
+        running = false;
     }
 
     @Override
-    protected void onStop() {
-        super.onStop();
-        // TODO: 27.09.2017 save status before stop
-        wasRunning = running;
-        running = false;
+    protected void onResume() {
+        super.onResume();
+        // TODO: 27.09.2017 on resume 
+        if (wasRunning) {
+            running = wasRunning;
+//            running = true;
+        }
     }
 
     //    @Override

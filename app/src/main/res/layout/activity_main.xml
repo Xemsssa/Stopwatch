@@ -5,46 +5,51 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingBottom="20dp"
-    android:paddingLeft="20dp"
-    android:paddingRight="20dp"
-    android:paddingTop="20dp"
+    android:paddingBottom="@dimen/margin_20dp"
+    android:paddingLeft="@dimen/margin_20dp"
+    android:paddingRight="@dimen/margin_20dp"
+    android:paddingTop="@dimen/margin_20dp"
     tools:context="com.example.xemss.stopwatch.MainActivity">
+
     <TextView
         android:id="@+id/timeView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentTop="true"
-        android:textSize="80sp"
+        android:layout_above="@+id/linearLayout"
+        android:layout_centerInParent="true"
+        android:text="@string/time"
+        android:layout_marginBottom="@dimen/margin_20dp"
         android:textAppearance="?attr/textAppearanceLargePopupMenu"
-        android:text="@string/time"/>
+        android:textSize="85sp" />
 
     <LinearLayout
-        android:id="@+id/linearlayout1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/timeView"
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal">
+        android:layout_centerInParent="true"
+        android:id="@+id/linearLayout">
 
         <Button
             android:id="@+id/btnStart"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="onClickStart"
-            android:layout_marginRight="10dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/margin_20dp"
             android:layout_weight="1"
+            android:onClick="onClickStart"
             android:text="@string/start" />
 
         <Button
             android:id="@+id/btnStop"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/margin_20dp"
             android:layout_weight="1"
-            android:layout_marginLeft="10dp"
             android:onClick="onClickStop"
             android:text="@string/stop" />
+
     </LinearLayout>
 
     <Button
@@ -52,7 +57,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
+        android:layout_below="@+id/linearLayout"
+        android:layout_marginTop="@dimen/margin_20dp"
         android:onClick="onClickReset"
         android:text="@string/reset" />
+
 </RelativeLayout>
